@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link type="text/css" rel="stylesheet" href="static/bootstrap/css/bootstrap.css"/>
+		<title>Changed Music</title>
+
+	</head>
+	<body>
+	<div class="container">
+      <div class="page-header">
+        <h1>Updated Music</h1>
+      </div>
+
+    {% if filename %}
+    <div>
+        <h2>The mp3 file has been changed</h2>
+        <h2>Changed Song : {{ filename }}</h2>
+        <div class="hero-unit">
+       
+ 
+        <p>
+            <a href="{{ url_for('layout') }}" class="btn btn-primary">Home</a>
+            <a href="/uploads/{{ filename }}" class="btn btn-info">Download</a>
+            <a href="{{ url_for('upload_file') }} " class="btn btn-danger">Upload Another</a>
+            <a href = "{{ url_for('toSoundCloud') }}" class="btn btn-danger"> SoundCloud</a>
+        </p>
+ 
+        </div>
+        {% endif %}
+ 
+    </div>
+
+    <hr/>
+   
+</div>
+</body>
+</html>
